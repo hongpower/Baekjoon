@@ -8,4 +8,4 @@ for _ in range(c):
     for i in lst[1:]:
         if i > avg :
             passN += 1
-    print(f'{round((passN/stuN)*100,ndigits=3)}%')
+    print('{:.3f}%'.format(round((passN/stuN)*100,ndigits=3)))
