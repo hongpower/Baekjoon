@@ -1,4 +1,5 @@
 # 그룹 단어 체커
+# 1) 다른 사람 참고:
 n = int(input())
 cnt = n
 for _ in range(n):
@@ -9,5 +10,24 @@ for _ in range(n):
         elif word[w] in word[w+1:]: # 알파벳이 존재하는데 바로 다음에가 아니라면
             cnt -=1
             break
+print(cnt)
+
+# 2) enumerate활용 by me
+n = int(input())
+cnt = n
+
+for _ in range(n):
+    lst = []
+    word = input()
+    for indexL, letter in enumerate(word):
+        if letter not in lst:
+            lst.append(letter)
+        else:
+            if letter == lst[indexL-1]:
+                lst.append(letter)
+                pass
+            else:
+                cnt -=1
+                break
 print(cnt)
 
